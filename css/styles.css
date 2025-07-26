@@ -31,7 +31,7 @@
     --secondary-color: #3367d6;
     --accent-color: #ff8a65;
     --text-color: #e0e0d7;
-    --light-text: #b0b0b0;
+    --light-text: #8d8d8d;
     --bg-color: #121212;
     --card-body-bg: rgb(11, 11, 11);
     --card-bg: #1e1e1e;
@@ -338,12 +338,14 @@ ul {
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* This makes the background fixed during scroll */
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     text-align: center;
     color: white;
     position: relative; /* Needed for proper positioning */
+    margin-top: 25px;
+    margin-bottom: 40x;
 }
 
 .hero::before {
@@ -452,7 +454,7 @@ ul {
 }
 
 .mvp-icon {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 20px;
 }
 
@@ -481,7 +483,7 @@ ul {
 }
 
 .mvp-card.active h3 {
-    color: #1a5276;
+    color: #51ace6;
 }
 
 /* Responsive Design */
@@ -623,7 +625,9 @@ ul {
 .service-card p {
     color: var(--light-text);
 }
-
+.service-card2 p {
+    color: var(--light-text);
+}
 /* Clients Section */
 .clients-slider-container {
     position: relative;
@@ -870,19 +874,20 @@ ul {
 /* Team Carousel */
 .team-carousel {
     position: relative;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-.team-members {
-    display: flex;
-    transition: transform 0.6s ease;
+.carousel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin-bottom: 30px;
 }
 
 .member-card {
-    min-width: 100%;
-    padding: 0 15px;
+    padding: 0 10px;
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
@@ -893,11 +898,8 @@ ul {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    height: 450px;
-    width: 400px;
-    position: relative;
-    transform-style: preserve-3d;
+    transition: all 0.4s ease;
+    height: 100%;
 }
 
 .member-card.active .card-inner {
@@ -906,24 +908,24 @@ ul {
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-10px); }
 }
 
-.card-front{
-    position: absolute;
+.card-front {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
-    padding: 30px;
+    padding: 25px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .member-image {
     height: 200px;
-    position:relative;
+    position: relative;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
-    margin: -30px -30px 20px -30px;
+    border-radius: 8px;
+    margin: -25px -25px 20px -25px;
 }
 
 .member-image img {
@@ -944,10 +946,11 @@ ul {
 
 .member-info {
     text-align: center;
+    flex-grow: 1;
 }
 
 .member-info h3 {
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 5px;
     color: var(--text-color);
 }
@@ -956,6 +959,7 @@ ul {
     color: #e67e22;
     font-weight: bold;
     margin-bottom: 5px;
+    font-size: 16px;
 }
 
 .company {
@@ -964,38 +968,11 @@ ul {
     margin-bottom: 15px;
 }
 
-.social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.social-link a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: var(--social-link);
-    margin: 0 10px;
-    transition: var(--transition);
-}
-
-.social-link a:hover {
-    
-    background-color: var(--primary-color);
-    transform: translateY(-5px);
-    
-}
-
-.view-more-btn{
+.view-more-link {
     background: var(--primary-color);
     color: white;
     border: none;
-    padding: 12px 25px;
+    padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
     font-weight: bold;
@@ -1003,35 +980,21 @@ ul {
     margin: 20px auto 0;
     transition: all 0.3s ease;
     width: 80%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-.view-more-btn:hover{
+.view-more-link:hover {
     background: var(--secondary-color);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(230, 126, 34, 0.4);
 }
 
-.view-more-btn i{
+.view-more-link i {
     margin-left: 8px;
 }
 
-.achievements {
-    margin: 20px 0;
-    padding: 0;
-    list-style: none;
-}
-
-.achievements li {
-    margin-bottom: 10px;
-    padding-left: 25px;
-    position: relative;
-}
-
-.achievements i {
-    position: absolute;
-    left: 0;
-    top: 3px;
-}
 /* Hover Effects */
 .member-card:hover .member-image img {
     transform: scale(1.05);
@@ -1040,37 +1003,31 @@ ul {
 .member-card:hover .card-inner {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
-/* Flip Card */
-.flipped .card-inner {
-    transform: rotateY(180deg);
-}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .section-header h2 {
-        font-size: 28px;
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .testimonial-content {
-        padding: 20px;
+    .member-card {
+        padding: 0 15px;
     }
     
-    .testimonial-text {
-        font-size: 16px;
-    }
-    .section-header h2 {
-        font-size: 28px;
-    }
-    
-    .card-inner {
-        height: auto;
-        min-height: 450px;
+    .card-front {
+        padding: 30px;
     }
     
     .member-image {
-        height: 150px;
+        margin: -30px -30px 20px -30px;
     }
 }
+
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* Contact Section */
 .contact-content {
     display: flex;
