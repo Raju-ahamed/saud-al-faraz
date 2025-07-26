@@ -227,7 +227,7 @@ ul {
 }
 
 .logo-text span {
-    font-size: 12px;
+    font-size: 10px;
     color: rgb(192, 173, 117);
     display: block;
 }
@@ -280,12 +280,15 @@ ul {
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+    .header{
+        height: 17%;
+    }
     .logo-text h1 {
-        font-size: 14px; /* Smaller text for mobile */
+        font-size: 18px; /* Smaller text for mobile */
     }
     
     .logo-text span {
-        font-size: 10px; /* Smaller text for mobile */
+        font-size: 9px; /* Smaller text for mobile */
     }
     
     .nav-links {
@@ -294,7 +297,7 @@ ul {
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: #fff;
+        background-color: #080808;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         padding: 20px 0;
         transform: translateY(-10%);
